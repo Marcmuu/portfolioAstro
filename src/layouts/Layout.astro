@@ -1,0 +1,117 @@
+---
+import '@fontsource-variable/onest';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- Link Flowbite -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+		<!-- Script EmailJS -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<!-- FORM EmailJS -->
+		<script type="text/javascript">
+			(function() {
+				// https://dashboard.emailjs.com/admin/account
+				emailjs.init('SmF2uzH3WSTImjV3T');
+			})();
+		</script>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					event.preventDefault();
+					// generate a five digit number for the contact_number variable
+					this.contact_number.value = Math.random() * 100000 | 0;
+					// these IDs from the previous steps
+					//El primer esta en l'apartat Email Service i el segon en el de Email Template
+					emailjs.sendForm('service_yrduq6s', 'template_w1x784a', this)
+						.then(function() {
+							console.log('SUCCESS!');
+							const alertSuccess = document.getElementById("alertSuccess");
+							alertSuccess.classList.remove("hidden");
+                        	alertSuccess.classList.add("flex");
+							setTimeout(()=>{
+								alertSuccess.classList.add("hidden");
+							}
+							, 5000);
+							document.getElementById("contact-form").reset();
+
+						}, function(error) {
+							console.log('FAILED...', error);
+							const alertIncorrect = document.getElementById("alertIncorrect");
+							alertIncorrect.classList.remove("hidden");
+                        	alertIncorrect.classList.add("flex");
+							setTimeout(()=>{
+								alertIncorrect.classList.add("hidden");
+							}
+							, 5000);
+							document.getElementById("contact-form").reset();
+						});
+				});
+			}
+		</script>
+
+		<script type="text/javascript">
+
+
+
+			let alertSuccess = document.getElementById('alertSuccess');
+			let alertIncorrect = document.getElementById('alertIncorrect');
+
+			console.log(alertIncorrect)
+			console.log(alertSuccess)
+		</script>
+
+	</head>
+	<body>
+		<!-- Background tret de https://bg.ibelick.com/ -->
+		<div class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		
+		<Header />
+		
+		<slot />
+
+		<Footer />
+	</body>
+	<!-- Script Flowbite -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+</html>
+<style is:global>
+	:root {
+		color-scheme: dark light;
+	}
+	html {
+		font-family: 'Onest Variable', sans-serif;
+	}
+	body{
+		background: #0a0a0a; 
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		scroll-behavior: smooth;
+	}
+
+	@media (prefers-reduced-motion: reduce){
+		html{
+			scroll-behavior: auuto;
+		}
+	}
+</style>

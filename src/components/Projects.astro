@@ -1,0 +1,176 @@
+---
+import NextJSIcon from "../icons/NextJS.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import HtmlIcon from "../icons/Html.astro";
+import CssIcon from "../icons/Css.astro";
+import JavascriptIcon from "../icons/Javascript.astro";
+import JQueryIcon from "../icons/Jquery.astro";
+import FigmaIcon from "../icons/Figma.astro";
+import TypescriptIcon from "../icons/Typescript.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import EyeIcon from "../icons/EyeIcon.astro";
+
+import Slider from "./Slider.astro";
+
+
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJSIcon,
+    }, 
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: TailwindIcon,
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-[#ad4417] text-white",
+        icon: HtmlIcon,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#003159] text-white",
+        icon: CssIcon,
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-[#ab9925] text-black",
+        icon: JavascriptIcon,
+    },
+    FIGMA: {
+        name: "Figma",
+        class: "bg-black text-white",
+        icon: FigmaIcon,
+    },
+    JQUERY: {
+        name: "JQuery",
+        class: "bg-[#003159] text-white",
+        icon: JQueryIcon,
+    },
+    TYPESCRIPT: {
+        name: "Typescript",
+        class: "bg-[#003159] text-white",
+        icon: TypescriptIcon,
+    },
+};
+
+
+const PROJECTS = [
+    {
+        title: "Centro Odontoiatrico Colombo",
+        description: "Proyecto profesional para un clínica dental Italiana.",
+        link: "https://www.centrodontoiatricocolombo.com/",
+        github: "",
+        images: ["/COC-1.jpg", "/COC-2.avif", "/COC-3.avif", "/COC-4.avif", "/COC-5.avif"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.FIGMA],
+    },
+    {
+        title: "Sant Quirze Sobre Rodes",
+        description: "Proyecto profesional para un club de patinage agressivo.",
+        link: "https://sqsr.vercel.app/",
+        github: "https://github.com/Marcmuu/SantQuirzeSobreRodes",
+        images: ["/SQSR-1.avif", "/SQSR-2.avif", "/SQSR-3.avif", "/SQSR-4.avif", "/SQSR-5.avif"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.JQUERY],
+    },
+    {
+        title: "Bankist APP",
+        description: "Proyecto personal para recrear una aplicación bancaria. Login de usuarios, transferencias entre cuentas, prestamos de dinero, eliminación de cuentas, tiempo limito de sessión... Usuario: js, Contraseña: 1111",
+        link: "https://bankist-app-red.vercel.app/",
+        github: "https://github.com/Marcmuu/Bankist-App",
+        images: ["/BANK-2.avif", "/BANK-1.avif"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    },
+    {
+        title: "Marcmuu's Hotel",
+        description: "Proyecto personal creando un sistema de reservas de habitaciones en un Hotel. Uso de localStorage para el registro de usuarios y para las reservas.",
+        link: "https://marcmuuhotel.vercel.app/",
+        github: "https://github.com/Marcmuu/Marcmuu-s-Hotel.git",
+        images: ["/HOTEL-1.avif", "/HOTEL-2.avif", "/HOTEL-3.avif", "/HOTEL-4.avif"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+    },
+];
+
+
+---
+
+
+{
+
+    PROJECTS.map(({title, description, images, tags, link, github}, i) =>( 
+    <article class="pb-4 md:pb-6 lg:mb-8">
+        <h3 class="text-2xl font-semibold mb-2 text-yellow-200/80">{title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+
+        <ul class="flex flex-row mb-4 flex-wrap gap-2">
+            {
+            tags.map((tag)=> (
+                <li>
+                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                      <tag.icon class="size-4"/>
+                      {tag.name}  
+                    </span>
+                </li>
+            ))
+            }
+        </ul>
+        
+        <div id={`gallery${i}`} class="relative w-full" data-carousel="static">
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <Slider images={images}/>
+          </div>
+          <!-- Slider controls -->
+          <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                  </svg>
+                  <span class="sr-only">Previous</span>
+              </span>
+          </button>
+          <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  </svg>
+                  <span class="sr-only">Next</span>
+              </span>
+          </button>
+      </div>
+
+        
+        <ul class="flex flex-row mb-4 flex-wrap py-4">  
+            
+            <li class="pr-2">
+                <a class="bg-white/5 border border-white/10 rounded-lg flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 transition hover:bg-white/10 hover:cursor-pointer" href={`${link}`} rel="noopener noreferrer" target="_blank">
+                    <EyeIcon class="size-4"/>
+                    <span>Visitar Página</span>
+                </a>
+            </li>           
+            
+            {
+                github &&
+                <li>
+                    <a class="bg-white/5 border border-white/10 rounded-lg flex justify-center items-center gap-x-2 py-1 px-2 md:py-2 md:px-4 transition hover:bg-white/10 hover:cursor-pointer" href={`${github}`} rel="noopener noreferrer" target="_blank">
+                        <GitHubIcon class="size-4"/>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+            }
+            
+        </ul>
+    </article>
+    ))
+}
+
+
+
+
+
+
+
+
+

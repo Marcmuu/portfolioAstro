@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+
+import SectionContainer from "../components/SectionContainer.astro";
+
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+
+
+import BriefcaseIcon from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+import ContactIcon from "../icons/ContactIcon.astro";
+
+---
+
+<Layout 
+title="Portfolio Marc Morell - Desarrollador y Programador Web."
+description="Contrata a Marc Morell Gumí para crear tu aplicación web o móvil. Desarrollador Web.">
+  
+  <main class="px-4">
+    <SectionContainer id="about" class="py-11 md:py-22 lg:py-52">
+      <h1 class="text-white text-bold  text-xl lg:text-3xl xl:text-5xl flex flex-row gap-x-4 pb-6 lg:pb-10 ">
+        Hey, soy Marc
+		<a class="flex justify-center items-center"
+		href="https://www.linkedin.com/in/marcmorellgumi/"
+		target="_blank"
+		rel="noopener">
+    	<Badge>Disponible para trabajar</Badge></a>
+      </h1>
+      <h2 class="text-xl lg:text-lg opacity-80 text-wrap max-w-[700px]">
+        Actualmente, estoy complementando mi educación
+        con cursos autodidactas, diseñando y desarrollando sitios web para clientes. <span class="text-yellow-200/70">De Barcelona, España.</span> 
+        <!-- Mi objetivo es fusionar la creatividad y la funcionalidad para construir
+		experiencias digitales impactantes y efectivas. -->
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+		<SocialPill href="https://www.linkedin.com/in/marcmorellgumi/">
+			<LinkedInIcon class="size-4 md:size-6" />
+			LinkedIn
+		</SocialPill>
+		<SocialPill href="https://github.com/Marcmuu">
+			<GitHubIcon class="size-4 md:size-6" />
+			GitHub
+		</SocialPill>
+		<SocialPill href="mailto:morellgumi@gmail.com">
+			<MailIcon class="size-4 md:size-6" />
+			Correo
+		</SocialPill>
+	  </nav>
+
+    </SectionContainer>
+
+	<SectionContainer id="experience" class="">
+		<h2 class="text-xl lg:text-lg font-semibold mb-6 flex gap-x-2 items-center"> 
+			<BriefcaseIcon class="size-6" />Experiencia laboral</h2>
+		<Experience />
+	</SectionContainer>
+
+	<SectionContainer id="projects" class="py-11 md:py-22 lg:py-44 pb-5 md:pb-10 lg:pb-20">
+		<h2 class="text-xl lg:text-lg font-semibold mb-6 flex gap-x-2 items-center"> 
+			<CodeIcon class="size-6" />Proyectos</h2>
+		<Projects />
+	</SectionContainer>
+
+	
+	<SectionContainer id="contact" class="pb-5 md:pb-10 lg:pb-20">
+		<h2 class="text-xl lg:text-lg font-semibold mb-6 flex gap-x-2 items-center"> 
+			<ContactIcon class="size-6" />Contacto</h2>
+		<Contact />
+	</SectionContainer>
+
+  </main>
+</Layout>

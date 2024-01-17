@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCES = [
+    {
+        date: 'Octubre 2022 - Abril 2022 ',
+        title: 'MGA Games',
+        description: 'Prácticas de Front-End Developer en una empresa puntera en el desarrollo de máquinas recreativas online.',
+        link: "https://www.mga.es/",
+    },
+    {
+        date: 'Septiembre 2021 - Junio 2023',
+        title: 'Instituto Jaume Viladoms',
+        description: 'Grado superior en Desarrollo de Aplicaciones Web (DAW).',
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">   
+    {
+        EXPERIENCES.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {... experience} />
+            </li>
+        ))
+    }               
+</ol>
+
+
