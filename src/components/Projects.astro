@@ -9,6 +9,8 @@ import FigmaIcon from "../icons/Figma.astro";
 import TypescriptIcon from "../icons/Typescript.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 import EyeIcon from "../icons/EyeIcon.astro";
+import AstroIcon from "../icons/Astro.astro";
+import ShopifyIcon from "../icons/Shopify.astro";
 
 import Slider from "./Slider.astro";
 
@@ -29,6 +31,16 @@ const TAGS = {
         name: "HTML",
         class: "bg-[#ad4417] text-white",
         icon: HtmlIcon,
+    },
+    ASTRO: {
+        name: "ASTRO",
+        class: "bg-black text-white",
+        icon: AstroIcon,
+    },
+    SHOPIFY: {
+        name: "SHOPIFY",
+        class: "bg-[#437507] text-white",
+        icon: ShopifyIcon,
     },
     CSS: {
         name: "CSS",
@@ -62,10 +74,26 @@ const PROJECTS = [
     {
         title: "Centro Odontoiatrico Colombo",
         description: "Proyecto profesional para un clínica dental Italiana.",
-        link: "https://www.centrodontoiatricocolombo.com/",
+        link: "https://centro-odontoiatrico-colombo2.vercel.app/",
         github: "",
         images: ["/COC-1.jpg", "/COC-2.avif", "/COC-3.avif", "/COC-4.avif", "/COC-5.avif"],
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.FIGMA],
+    },
+    {
+        title: "COVIRAN Sant Quirze",
+        description: "Proyecto profesional para un supermercado en Sant Quirze del Vallès.",
+        link: "https://coviransqv.com/",
+        github: "",
+        images: ["/COVIRAN-1.avif","/COVIRAN-2.avif","/COVIRAN-3.avif","/COVIRAN-4.avif"],
+        tags: [TAGS.SHOPIFY],
+    },
+    {
+        title: "JMResources",
+        description: "Proyecto personal para juntar todos los recursos más utiles relacionados con el desarrollo web.",
+        link: "https://jmr-ten.vercel.app/",
+        github: "https://github.com/Marcmuu/jmr",
+        images: ["/JMR.avif", "JMR-2.avif"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.TAILWIND, TAGS.TYPESCRIPT, TAGS.ASTRO],
     },
     {
         title: "Sant Quirze Sobre Rodes",
@@ -76,15 +104,23 @@ const PROJECTS = [
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.JQUERY],
     },
     {
-        title: "Bankist APP",
-        description: "Proyecto personal para recrear una aplicación bancaria. Login de usuarios, transferencias entre cuentas, prestamos de dinero, eliminación de cuentas, tiempo limito de sessión... Usuario: js, Contraseña: 1111",
+        title: "Terra Burgers",
+        description: "Proyecto profesional para un restaurante de hamburguesas.",
+        link: "https://terra-burgers.vercel.app/",
+        github: "",
+        images: ["/CONSTRUCCION.avif",""],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.TAILWIND],
+    },
+    {
+        title: "Bankist APP (Desktop)",
+        description: "Proyecto personal para recrear una aplicación bancaria. Login de usuarios, transferencias entre cuentas, prestamos de dinero, eliminación de cuentas, tiempo limite de sessión... Usuario: js, Contraseña: 1111",
         link: "https://bankist-app-red.vercel.app/",
         github: "https://github.com/Marcmuu/Bankist-App",
         images: ["/BANK-2.avif", "/BANK-1.avif"],
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
     },
     {
-        title: "Marcmuu's Hotel",
+        title: "Marcmuu's Hotel (Desktop)",
         description: "Proyecto personal creando un sistema de reservas de habitaciones en un Hotel. Uso de localStorage para el registro de usuarios y para las reservas.",
         link: "https://marcmuuhotel.vercel.app/",
         github: "https://github.com/Marcmuu/Marcmuu-s-Hotel.git",
@@ -100,7 +136,7 @@ const PROJECTS = [
 {
 
     PROJECTS.map(({title, description, images, tags, link, github}, i) =>( 
-    <article class="pb-4 md:pb-6 lg:mb-8">
+    <article class="pb-4 md:pb-6 lg:mb-8 text-white">
         <h3 class="text-2xl font-semibold mb-2 text-yellow-200/80">{title}</h3>
         <p class="text-lg mb-4 text-pretty">{description}</p>
 
