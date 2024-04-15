@@ -1,21 +1,51 @@
-    <video class="rounded-lg w-full ">
-        <source src="/astronaut.mp4" type="video/mp4">
-    </video>
-    
-    <div class=" flex justify-center items-center bg-white/5 border border-white/10 rounded-lg py-10">
-        <form id="contact-form" class="w-full px-6 lg:max-w-md mx-auto">
-            <input type="hidden" name="contact_number">
-            
-            <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="user_name" id="user_name" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-yellow-200/80 peer" placeholder=" " required />
-                    <label for="user_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:text-yellow-200/80 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="user_surname" id="user_surname" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-yellow-200/80 peer" placeholder=" " required />
-                    <label for="user_surname" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:text-yellow-200/80 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
-                </div>
-            </div>
+<video
+  autoplay="autoplay"
+  loop="true"
+  preload="auto"
+  muted="true"
+  class="rounded-lg w-full"
+>
+  <source src="/astronaut.mp4" type="video/mp4" />
+</video>
+
+<div
+  class="flex justify-center items-center bg-white/5 border border-white/10 rounded-lg py-10"
+>
+  <form id="contact-form" class="w-full px-6 lg:max-w-md mx-auto">
+    <input type="hidden" name="contact_number" />
+
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          type="text"
+          name="user_name"
+          id="user_name"
+          class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-yellow-200/80 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="user_name"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:text-yellow-200/80 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Nombre</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          type="text"
+          name="user_surname"
+          id="user_surname"
+          class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-yellow-200/80 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="user_surname"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:text-yellow-200/80 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Apellido</label
+        >
+      </div>
+    </div>
 
     <div class="relative z-0 w-full mb-5 group">
       <input
